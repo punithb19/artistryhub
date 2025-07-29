@@ -1,0 +1,38 @@
+<div class="modal-overlay container">
+  <!-- Modal Header -->
+  <div class="modal-header d-flex align-items-center">
+    <img [src]="data.thumbnail" alt="{{ data.title }}" class="thumbnail me-2">
+    <div>
+      <p class="mb-0">{{ data.title }}</p>
+      <p class="text-muted mb-0">{{ data.year }}</p>
+    </div>
+    <button type="button" class="btn-close ms-auto" aria-label="Close" (click)="close()"></button>
+  </div>
+
+  <hr />
+
+  <!-- Modal Body -->
+  <div class="modal-body">
+    <div *ngIf="loading" class="spinner-container">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+
+    <!-- Categories Grid -->
+    <div *ngIf="!loading && categories.length > 0" class="row g-3">
+      <div *ngFor="let category of categories" class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+        <div class="card category-card w-100">
+          <img [src]="category.thumbnail" alt="{{ category.name }}" class="card-img-top category-thumbnail">
+          <div class="card-body text-center">
+            <p class="card-title mb-0">{{ category.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- No Categories Fallback -->
+     <div *ngIf="!loading && categories.length === 0" class="alert alert-danger">
+      No categories available.
+     </div>
+    <p *ngIf="!loading && categories.length === 0" class="text-center text-muted"></p>
+  </div>
+</div>

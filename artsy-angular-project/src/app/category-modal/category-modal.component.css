@@ -1,0 +1,43 @@
+/* Modal Overlay */
+.modal-overlay {
+  background-color: #fff;
+  max-height: 100%;
+}
+
+:host ::ng-deep .mat-mdc-dialog-container {
+  width: 95vw;
+  max-width: 95vw;
+  overflow: auto; /* makes it scrollable */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  align-items: center;
+}
+
+.thumbnail {
+  width: 60px;
+  height: auto;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+
+.category-card {
+  border-radius: 5px; 
+  height: auto;
+}
+
+.category-thumbnail {
+  height: 250px;
+    object-fit: cover;
+}
+
+.card-title {
+font: medium;
+}

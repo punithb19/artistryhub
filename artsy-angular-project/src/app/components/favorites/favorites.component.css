@@ -1,0 +1,117 @@
+.artist-card {
+    height: 200px;
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+  
+  .artist-card::before {
+    content: '';
+    position: absolute;
+    top: 0;.artist-card {
+  height: 200px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  position: relative; /* Required for absolute positioning of child elements */
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.artist-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.artist-info {
+  position: relative;
+  color: white;
+  padding: 20px;
+  height: calc(100% - 40px); /* Adjust height to leave space for .card-actions */
+  display: flex;
+  flex-direction: column;
+}
+
+.artist-info h3 {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.artist-info p {
+  margin: 0;
+}
+
+.card-actions {
+  position: absolute; /* Position it over the card */
+  bottom: 10px; /* Align it at the bottom */
+  left: 10px; /* Add some padding from the left */
+  right: 10px; /* Add some padding from the right */
+  
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-actions small {
+  color: white; /* Ensure text is visible over dark background */
+}
+
+.btn-remove {
+  background: transparent;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.btn-remove:hover {
+  color: #f8f9fa; /* Slightly lighter color on hover */
+}
+
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+  }
+  
+  .artist-info {
+    position: relative;
+    color: white;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .artist-info h3 {
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  .artist-info p {
+    margin: 0;
+  }
+  
+  .btn-remove {
+    background: transparent;
+    border: none;
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .btn-remove:hover {
+    color: #f8f9fa;
+  }
+  

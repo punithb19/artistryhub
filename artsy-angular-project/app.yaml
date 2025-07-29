@@ -1,0 +1,14 @@
+runtime: python39
+service: frontend
+
+handlers:
+
+  - url: /(.*\.(js|css|png|jpg|svg|json))
+    static_files: dist/my-angular-project/browser/\1
+    upload: dist/my-angular-project/browser/.*\.(js|css|png|jpg|svg|json)$
+
+  - url: /.*
+    static_files: dist/my-angular-project/browser/index.html
+    upload: dist/my-angular-project/browser/index.html
+
+    

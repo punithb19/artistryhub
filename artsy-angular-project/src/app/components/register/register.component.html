@@ -1,0 +1,67 @@
+<div class="register-container mt-5">
+    <h2>Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
+      <!-- Full Name Field -->
+      <div class="form-group">
+        <label for="username">Full Name</label>
+        <input
+          type="text"
+          id="username"
+          class="form-control"
+          [ngClass]="{'is-invalid': registerForm.get('username')?.invalid && registerForm.get('username')?.touched}"
+          formControlName="username"
+          placeholder="John Doe"
+        />
+        <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="error-message">
+          Full name is required.
+        </div>
+      </div>
+  
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          [ngClass]="{'is-invalid': serverErrorMessage || registerForm.get('email')?.invalid && registerForm.get('email')?.touched }"
+          formControlName="email"
+          placeholder="Email address"
+        />
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-message">
+          A valid email is required.
+        </div>
+        <div *ngIf="serverErrorMessage" class="error-message mt-0">
+            {{ serverErrorMessage }}
+        </div>
+      </div>
+  
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          [ngClass]="{'is-invalid': registerForm.get('password')?.invalid && registerForm.get('password')?.touched}"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-message">
+          Password is required.
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="login-button" [disabled]="registerForm.invalid || loading">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status"></span>
+        <span *ngIf="!loading">Register</span>
+      </button>
+    </form>
+
+  </div>
+    
+    <!-- Login Link -->
+    <p class="register-link text-center mt-2">
+        Already have an account? <a routerLink="/login">Login</a>
+      </p>

@@ -1,0 +1,39 @@
+<div class="container mt-4">
+    <!-- Loading spinner -->
+    <div *ngIf="loading" class="text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  
+    <!-- No favorites message -->
+    <div *ngIf="!loading && favoriteArtistsDetails.length === 0" class="alert alert-danger">
+      No favorite artists.
+    </div>
+  
+    <!-- Artist cards grid -->
+    <div *ngIf="!loading && favoriteArtistsDetails.length > 0" class="row row-cols-1 row-cols-md-3">
+      <div *ngFor="let artist of favoriteArtistsDetails" class="col">
+        <div class="artist-card pointer" [style.background-image]="'url(' + (artist.thumbnail || 'assets/artsy_logo.svg') + ')'" (click)="viewArtistDetails(artist.id)">
+          <div class="artist-info">
+            <h3>{{ artist.name }}</h3>
+            <div class="mb-5">
+              <p>
+                {{ artist.birthday !== 'Unknown' ? artist.birthday : '' }}
+                -
+                {{ artist.deathday !== 'Unknown' ? artist.deathday : '' }}
+              </p>
+              <p>{{ artist.nationality }}</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <small>{{ (timeAgoMap[artist.id] | async) || 'Calculating...' }}</small>
+              <button class="btn-remove" (click)="$event.stopPropagation(); removeFromFavorites(artist.id)">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

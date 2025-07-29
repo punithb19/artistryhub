@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+  .custom-modal-width {
+    width: 80vw !important;
+    max-width: none !important;
+    height: auto !important;
+  }
+  
+  .custom-modal-width .mat-mdc-dialog-container {
+    padding: 15px;
+    border-radius: 10px !important;
+    background-color: #fff;
+    max-height: 90vh;
+    overflow: hidden;
+  }
+  @media (min-width: 768px) {
+    .custom-modal-width {
+      width: 80vw !important;
+    }
+  }
+  @media (min-width: 1024px) and (max-width: 1440px) {
+    .custom-modal-width .mat-mdc-dialog-container {
+        width: 80vw !important; /* Set width to 80% of the viewport */
+        max-width: none !important; /* Remove default max-width */
+        height: auto !important;
+    }
+  }
+  

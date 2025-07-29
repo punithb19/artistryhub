@@ -1,0 +1,53 @@
+<div class="login-container mt-5">
+    <h2>Login</h2>
+    
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-group">
+        <label for="email">Email address</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}"
+          formControlName="email"
+          placeholder="Email address"
+        />
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-message">
+          Email must be valid.
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          class="form-control"
+          [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
+          formControlName="password"
+          placeholder="Password"
+        />
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+          Password is required.
+        </div>
+        <div *ngIf="serverErrorMessage" class="error-message mt-0">
+            {{ serverErrorMessage }}
+          </div>
+      </div>
+      
+      
+      <button 
+        type="submit" 
+        class="login-button" 
+        [disabled]="loginForm.invalid || loading"
+      >
+        <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </span>
+        <span *ngIf="!loading">Log in</span>
+      </button>
+    </form>
+    
+  </div>
+  
+  <p class="register-link text-center mt-2">Don't have an account yet? <a routerLink="/register">Register</a></p>

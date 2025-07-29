@@ -1,0 +1,4 @@
+<div class="notification-item alert alert-{{ notification.type }} alert-dismissible fade show">
+    {{ notification.message }}
+    <button type="button" class="btn-close" (click)="close.emit(notification.id)"></button>
+</div>

@@ -1,0 +1,10 @@
+
+<app-header *ngIf="!(authService.isLoading$ | async)"></app-header>
+<div class="container">
+    <router-outlet *ngIf="!(authService.isLoading$ | async)"></router-outlet>
+<app-notification-container></app-notification-container>
+</div>
+
+<app-footer *ngIf="!(authService.isLoading$ | async)"></app-footer>
+
+

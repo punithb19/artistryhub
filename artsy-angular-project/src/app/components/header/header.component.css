@@ -1,0 +1,14 @@
+.nav-link {
+    color: #000; 
+    background-color: transparent; 
+    padding: 10px 15px; 
+  }
+  
+  .active-dropdown-item {
+    border-radius: 5px; 
+    background-color: #175394; 
+    color: #fff !important; 
+    width: 100%; 
+    display: block; 
+  }
+  

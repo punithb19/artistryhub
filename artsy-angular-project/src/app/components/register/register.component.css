@@ -1,0 +1,48 @@
+.register-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+  }
+  
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+  }
+  
+  .form-control {
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .form-control.is-invalid {
+    border-color: #dc3545;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+  }
+  
+  .login-button {
+    width: 100%;
+    padding: 8px;
+    background-color: #175394;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+ 
+  
+  .login-button[disabled] {
+    opacity: 0.65;
+  }
+  
+ 
+  
