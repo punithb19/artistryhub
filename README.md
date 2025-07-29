@@ -69,10 +69,8 @@ This full-stack web application enables users to search for artists using the Ar
 
 ### Live Demo
 
-- Frontend: [Your deployed frontend URL]
-- Backend API example: [Your deployed backend endpoint, e.g., `/api/search?q=Picasso`]
-
-> Replace these with actual deployment links.
+- Frontend: https://frontend-dot-artsy2bypunith-429730.wl.r.appspot.com/search
+- Backend API example: https://artsy2bypunith-429730.wl.r.appspot.com/api/search_artist?name=picasso
 
 ---
 
